@@ -1,0 +1,97 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 600,
+  "height": 400,
+  "title": "Social disadvantage and children vulnerable health development",
+  "data": {
+    "url": "https://raw.githubusercontent.com/anguyen-mpt/fit3179-datavis2/main/data/aggregated_data_cleaned.csv"
+  },
+  "params": [
+    {
+      "name": "Type_selection",
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "Cities",
+          "Rural Cities",
+          "Shires"
+        ],
+        "labels": [
+          "Show All",
+          "Cities",
+          "Rural Cities",
+          "Shires"
+        ],
+        "name": "LGA Type Selection: "
+      }
+    }
+  ],
+  "transform": [
+    {
+      "filter": "Type_selection == null || datum.Type == Type_selection"}
+  ],
+  "encoding": {
+    "x": {
+      "field": "Developmentally vulnerable",
+      "type": "quantitative",
+      "title": "Vulnerable health development score",
+      "axis": {"tickCount": 7}
+    },
+    "y": {
+      "field": "SEIFA Score",
+      "type": "quantitative",
+      "axis": {"tickCount": 8}
+    }
+  },
+  "layer": [
+    {
+      "mark": "circle",
+        "encoding": {
+        "size": {
+          "field": "Population",
+          "type": "quantitative", 
+          "scale": {
+            "type": "threshold",
+            "domain": [100000, 200000, 300000, 400000],
+            "range": [200, 300, 400, 500, 600] 
+          }
+        },
+         "color": {
+          "field": "Type",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Shires",
+              "Cities",
+              "Rural Cities"
+            ],
+            "range": [
+              "#a6cee3",
+              "#1f78b4",
+              "#b2df8a"
+            ]
+          }
+        },
+        "opacity": {"value": 0.8},
+        "stroke": {"value": "grey"},
+        "tooltip": [
+           {"field": "LGA", "type": "nominal", "title": "Local Government Area"},
+          {"field": "SEIFA Score", "type": "quantitative", "format": ","},
+          {"field": "Developmentally vulnerable", "type": "quantitative", "format": ",", "title": "Proportion of children with vulnerable development"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "baseline": "middle",
+        "dx": -12,
+        "fontSize": 11.5,
+        "fontStyle": "italic"
+      }
+      }
+  ]
+}
