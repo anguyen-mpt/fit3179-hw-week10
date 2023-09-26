@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Children health development in Victoria</title>
+  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
+  <!-- Import vega-embed -->
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+  <!-- Import pure.css -->
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
+    integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+  <!-- custom style -->
+  <style>
+    * {
+      font-family: 'Roboto', sans-serif;
+      line-height: 1.2;
+    }
+
+    h1 {
+      font-weight: 900;
+
+    }
+
+    body {
+      background-color: lightgray;
+    }
+
+    .page {
+      width: 750px;
+      background-color: white;
+      margin: auto;
+      padding: 70px;
+      padding-top: 35px;
+    }
+
+    .vis-container {
+      width: 100%;
+    }
+
+    .description h2,
+    h1 {
+      margin-top: 10px;
+    }
+
+    .description-right {
+      padding-left: 10px;
+    }
+
+    .description-left {
+      padding-right: 10px;
+    }
+
+    .pure-g {
+      margin-bottom: 25px;
+    }
+
+    .small-font {
+      font-size: 13px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="page">
+
+    <!-- Title and subtitle -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <h1>Chilren health development in Victoria by Local Government Areas (2021)</h1>
+        <p>The visualisations in this page aim to explore how the children health development in Victoria varies by Local Government Area (LGA) and whether it is linked to social disadvantage observed in such LGAs.</p>
+      </div>
+    </div>
+    <!-- end pure grid group -->
+
+    <!-- Choropleth map -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <div id="vis1" class="vis-container"></div>
+      </div>
+    </div>
+    <!-- end pure grid group -->
+
+    <!-- Caption/small text -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <p>It can be seen that the health development score varies greatly across Victoria, with more children in regional Local Government Areas suffering from vulnerable health development than those in Greater Melbourne.   </p>
+      </div>
+    </div>
+    <!-- end pure grid group -->
+
+    <!-- Bubble plot -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <div id="vis2" class="vis-container"></div>
+      </div>
+    </div>
+    <!-- end pure grid group -->
+
+    <!-- More text -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <p><small><i>Socio-Economic Indexes for Areas (SEIFA) is a product developed by the ABS that ranks areas in Australia according to relative socio-economic advantage and disadvantage.
+          Here, the SEIFA index used is Index of Relative Socio-economic Disadvantage (IRSD) which only measures of relative disadvantage. 
+          A low score indicates relatively greater disadvantage in general and vice versa.
+            </i></small></p>
+
+        <p>
+          The bubble plot above shows that there is a correlation between social disadvantage and vulnerable health development of children. Those LGAs that have high SEIFA score tend to have low proportion of children suffering from vulnerable health development and vice versa.</p>
+      </div>
+    </div>
+    <!-- end pure grid group -->
+
+
+    <div class="pure-g">
+      <div class="pure-u-1-1 small-font">
+        <p>This page is created by <a href="https://github.com/anguyen-mpt">Minh Phuong Trang (Ally) Nguyen</a> as part of the FIT3179 unit in Semester 2 2023.</p>
+      </div>
+    </div>
+  </div> <!-- end page -->
+
+  <script type="text/javascript">
+    var specVis1 = "./js/hw-week9-code.json";
+    var specVis2 = "./js/bubble-plot-code.json";
+    
+
+    vegaEmbed('#vis1', specVis1, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    vegaEmbed('#vis2', specVis2, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+   
+  </script>
+</body>
+
+</html>
