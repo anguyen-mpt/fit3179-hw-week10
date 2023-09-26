@@ -1,0 +1,60 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 450,
+  "height": 350,
+  "title": "Proportion of Victorian children with vulnerable health development by Local Government Area in 2021",
+  "projection": {"type": "equirectangular"},
+  "data": {
+    "url": "https://raw.githubusercontent.com/anguyen-mpt/fit3179-datavis2/main/data/vic-lga-2019.json",
+    "format": {"type": "topojson", "feature": "vic-lga-2019"}
+  },
+  "encoding": {
+    "tooltip": [
+      {
+        "field": "properties.LGA_NAME19",
+        "type": "nominal",
+        "title": "Local Government Area:"
+      },
+      {
+        "field": "Developmentally vulnerable",
+        "type": "quantitative",
+        "title": "Proportion of children with vulnerable development (%):"
+      }
+    ]
+  },
+  "layer": [
+    {"mark": {"type": "geoshape", "fill": "white", "stroke": "black"}},
+    {
+      "transform": [
+        {
+          "lookup": "properties.LGA_NAME19",
+          "from": {
+            "data": {
+              "url": "https://raw.githubusercontent.com/anguyen-mpt/FIT3179_datavis2/main/data/LGA%20score_2021_v4.csv"
+            },
+            "key": "LGA",
+            "fields": ["Developmentally vulnerable"]
+          }
+        }
+      ],
+      "mark": {"type": "geoshape"},
+      "encoding": {
+        "color": {
+          "field": "Developmentally vulnerable",
+          "type": "quantitative",
+          "title": ["Percentage of children"],
+          "scale": {
+            "type": "threshold",
+            "domain": [3, 6, 9, 12],
+            "range": ["#fee5d9", "#fcae91", "#fb6a4a", "#de2d26", "#a50f15"]
+          }
+        }
+      }
+    }
+  ],
+  "config": {
+    "view": {"stroke": null},
+    "legend": {"labelFont": "Roboto", "titleFont": "Roboto"},
+    "title": {"font": "Roboto", "fontSize": 15, "fontWeight": 700}
+  }
+}
