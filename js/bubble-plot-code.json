@@ -2,7 +2,7 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "width": 600,
     "height": 400,
-    "title": "Social disadvantage and children health development in Victorian Local Government Areas",
+    "title": "Figure 2: Social disadvantage and children health development in Victorian Local Government Areas",
     "data": {
       "url": "https://raw.githubusercontent.com/anguyen-mpt/fit3179-datavis2/main/data/aggregated_data_cleaned.csv"
     },
