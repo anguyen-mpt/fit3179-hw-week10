@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": 450,
   "height": 350,
-  "title": "Proportion of Victorian children with vulnerable health development by Local Government Area in 2021",
+  "title": "Figure 1: Proportion of Victorian children with vulnerable health development by Local Government Area in 2021",
   "projection": {"type": "equirectangular"},
   "data": {
     "url": "https://raw.githubusercontent.com/anguyen-mpt/fit3179-datavis2/main/data/vic-lga-2019.json",
