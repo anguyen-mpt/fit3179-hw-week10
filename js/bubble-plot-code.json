@@ -100,7 +100,7 @@
           "opacity": {
             "condition": {
               "test": 
-              "datum['LGA'] == 'Stonnington (C)' || datum['LGA'] == 'Central Goldfields (S)' || datum['LGA'] == 'Greater Dandenong (C)'",
+              "datum['LGA'] == 'Central Goldfields (S)' || datum['LGA'] == 'Greater Dandenong (C)'",
               "value": 1
             },
             "value": 0
