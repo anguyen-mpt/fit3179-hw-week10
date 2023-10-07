@@ -107,13 +107,14 @@
           },
           "tooltip": [
             {"field": "LGA", "type": "nominal", "title": "Local Government Area:"},
-             {"field": "Population", "type": "quantitative", "title": "Population:"},
-            {"field": "SEIFA Score", "type": "quantitative", "title": "Social disadvantage score:"},
-            {"field": "Developmentally vulnerable", "type": "quantitative", "title": "Proportion of children with vulnerable development:"
+             {"field": "Population", "type": "quantitative", "format": ",.2r", "title": "Population:"},
+            {"field": "SEIFA Score", "type": "quantitative", "format": ",.2r", "title": "Social disadvantage score:"},
+            {"field": "Developmentally vulnerable", "type": "quantitative", "format": ",.2f", "title": "Proportion of children with vulnerable development (%):"
   }
           ]
         }
       }
     ]
   }
+        
         
