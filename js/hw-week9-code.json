@@ -13,13 +13,13 @@
       {
         "field": "properties.LGA_NAME19",
         "type": "nominal",
-        "title": "Local Government Area:"
+        "title": "Local Government Area"
       },
       {
         "field": "Developmentally vulnerable",
         "type": "quantitative",
         "format": ".2f",
-        "title": "Proportion of children with vulnerable development (%):"
+        "title": "Proportion of children with vulnerable development (%)"
       }
     ]
   },
