@@ -56,7 +56,8 @@
               "type": "threshold",
               "domain": [50000, 100000, 200000, 400000],
               "range": [80, 150, 250, 350, 450] 
-            }
+            },
+              "legend": {"format": ".1s"}
           },
            "color": {
             "field": "Type",
